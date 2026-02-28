@@ -3762,10 +3762,10 @@ local v494 = v466:MakeTab({"Visual", "user"})
 local v495 = v466:MakeTab({"Shop", "shoppingCart"})
 local v496 = v466:MakeTab({"Misc", "settings"})
 v484:AddDiscordInvite({
-    Name = "DesplockHub | Community",
+    Name = "UNK  | Community",
     Description = "Join server to receive Update",
-    Logo = "rbxassetid://131723242350068",
-    Invite = "https://discord.gg/BnEDf68jwx"
+    Logo = "rbxassetid://85339234010248",
+    Invite = "https://discord.gg/7xeV97etBC"
 })
 _G.SelectWeapon = "Melee"
 task.spawn(function()
