@@ -3749,21 +3749,21 @@ v466:AddMinimizeButton({
     Corner = { CornerRadius = UDim.new(0.25, 0) },
 })
 
-local v484 = v466:MakeTab({"Discord", "info"})
-local v485 = v466:MakeTab({"Farm", "home"})
-local v487 = v466:MakeTab({"Quest | Items", "swords"})
-local v486 = v466:MakeTab({"Auto Fishing", "rbxassetid://127664059821666"})
-local v489 = v466:MakeTab({"Sea Event", "waves"})
-local v491 = v466:MakeTab({"Raid/Fruits", "cherry"})
-local v497 = v466:MakeTab({"Stats", "Signal"})
-local v493 = v466:MakeTab({"Teleport", "locate"})
-local v499 = v466:MakeTab({"Status", "Scroll"})
-local v494 = v466:MakeTab({"Visual", "user"})
-local v495 = v466:MakeTab({"Shop", "shoppingCart"})
-local v496 = v466:MakeTab({"Misc", "settings"})
+local v484 = v466:MakeTab({"ديسكورد", "info"})
+local v485 = v466:MakeTab({"تفريم", "home"})
+local v487 = v466:MakeTab({"مهمات", "swords"})
+local v486 = v466:MakeTab({"صيد", "rbxassetid://127664059821666"})
+local v489 = v466:MakeTab({"البحر", "waves"})
+local v491 = v466:MakeTab({"رايد و فواكه", "cherry"})
+local v497 = v466:MakeTab({"ستاتس", "Signal"})
+local v493 = v466:MakeTab({"تنقل", "locate"})
+local v499 = v466:MakeTab({"حلات", "Scroll"})
+local v494 = v466:MakeTab({"رؤية", "user"})
+local v495 = v466:MakeTab({"شوي", "shoppingCart"})
+local v496 = v466:MakeTab({"اخرى", "settings"})
 v484:AddDiscordInvite({
     Name = "UNK  | Community",
-    Description = "Join server to receive Update",
+    Description = "ادخل سرفر ل تحديثات",
     Logo = "rbxassetid://85339234010248",
     Invite = "https://discord.gg/7xeV97etBC"
 })
@@ -3804,7 +3804,7 @@ task.spawn(function()
     end
 end)
 local _ = v485:AddDropdown({
-    Name = "Select Tool",
+    Name = "اختار سلاح",
     Description = "Choose the tool you want to use",
     Options = {"Melee", "Sword", "Gun", "Blox Fruit"},
     Default = "Melee",
@@ -3816,11 +3816,11 @@ local _ = v485:AddDropdown({
 
 v485:AddDropdown({
     Name = "UI Scale",
-    Description = "Adjust the user interface size",
+    Description = "كبر واجهة",
     Options = {
-        "Small",
-        "Large",
-        "Bigger"
+        "صغير",
+        "كبير",
+        "اكبررر"
     },
     Default = "Large",
     Callback = function(p36)
@@ -3835,7 +3835,7 @@ v485:AddDropdown({
         end
     end
 })
-local _ = v485:AddSection({"Farm"})
+local _ = v485:AddSection({"تفريم"})
 -- Funções auxiliares globais
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
@@ -3965,8 +3965,8 @@ local function CheckQuestNew()
     end
 end
 v485:AddToggle({
-    Name = "Auto Farm Level",
-    Description = "Farm Level",
+    Name = "تفريم لفلات",
+    Description = "تفريم",
     Default = false,
     Callback = function(state)
         _G.AutoFarm = state
@@ -4124,8 +4124,8 @@ spawn(function()
 end)
 if World3 then
 v485:AddToggle({
-    Name = "Auto Pirates Sea",
-    Description = "Farm Raid Pirate",
+    Name = "تفريم قلعة",
+    Description = "تفريم موبات قلعة",
     Default = false,
     Callback = function(v543)
         _G.AutoRaidPirate = v543
@@ -4166,8 +4166,8 @@ end)
 end
 if World2 then
     v485:AddToggle({
-        Name = "Auto Factory",
-        Description = "Spawns Every 1:30 [hours, Minutes]",
+        Name = "تفريم مصنع",
+        Description = "يرسبن كل ساعة و نص",
         Default = false,
         Callback = function(v732)
             _G.AutoFactory = v732
@@ -4200,8 +4200,8 @@ if World2 then
     end)
  end
 v485:AddToggle({
-    Name = "Auto Farm Nearest",
-    Description = "Auto Farm Nearest Mobs",
+    Name = "اوتو تفريم قريب",
+    Description = "يفرم موبات قريبة للاعب",
     Default = false,
     Callback = function(v520)
         _G.AutoNear = v520
@@ -4280,21 +4280,21 @@ task.spawn(function()
 end)
 
 if World3 then
-local _ = v485:AddSection({"Kill Player"})
+local _ = v485:AddSection({"قتل لاعب"})
 local v1123 = {}
 for _, v1125 in pairs(game.Players:GetPlayers()) do
     table.insert(v1123, v1125.Name)
 end
 local _ = nil
 v485:AddButton({
-    Title = "Get Quest Elite Players",
+    Title = "اخذ مهمة لقتل لاعبين",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PlayerHunter")
     end
 })
 v485:AddToggle({
-    Title = "Auto Kill Player Quest",
+    Title = "اوتو قتل لاعب",
     Description = "",
     Value = false,
     Callback = function(v1127)
@@ -4348,7 +4348,7 @@ spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Auto Safe Mode",
+    Name = "سايف مود",
     Description = "",
     Default = false,
     Callback = function(v1130)
@@ -4368,7 +4368,7 @@ end)
 end
 
 if World3 then
-local _ = v485:AddSection({"Tyrant of the Skies"})
+local _ = v485:AddSection({"tyrant"})
 local v548 = v485:AddParagraph({Title = "Check Eyes Status", Content = "Loading..."})
 task.spawn(function()
     while task.wait(1) do
@@ -4390,7 +4390,7 @@ task.spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Auto Farm Tyrant",
+    Name = "اوتو فارم tyrant",
     Description = "",
     Default = false,
     Callback = function(v553)
@@ -4492,7 +4492,7 @@ task.spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Summon Tyrant Of The Skies",
+    Name = "رسبن tyrant",
     Description = "",
     Default = false,
     Callback = function(v564)
@@ -4620,18 +4620,18 @@ task.spawn(function()
     end
 end)
 end
-local _ = v485:AddSection({"Farm Bones"})
-local v589 = v485:AddParagraph({Title = "Check Bone", Content = "Loading..."})
+local _ = v485:AddSection({"تفريم عظام"})
+local v589 = v485:AddParagraph({Title = "كشف عظام", Content = "تحميل..."})
 task.spawn(function()
     while task.wait(1) do
         pcall(function()
             local v590 = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones", "Check")
-            v589:Set("You Have: " .. tostring(v590) .. " Bones")
+            v589:Set("عندك: " .. tostring(v590) .. " عظام")
         end)
     end
 end)
 v485:AddToggle({
-    Name = "Auto Farm Bones",
+    Name = "اوتو تفريم عظام",
     Description = "",
     Default = false,
     Callback = function(v591)
@@ -4704,7 +4704,7 @@ spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Auto Kill Soul Reaper",
+    Name = "اوتو قتل soul reaper",
     Description = "",
     Default = false,
     Callback = function(v599)
@@ -4747,7 +4747,7 @@ spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Auto Trade Bones",
+    Name = "اوتو شراء بالعظام",
     Description = "",
     Default = false,
     Callback = function(v602)
@@ -4763,7 +4763,7 @@ spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Auto Pray",
+    Name = "اوتو دعاء",
     Description = "",
     Default = false,
     Callback = function(v603)
@@ -4783,7 +4783,7 @@ spawn(function()
     end)
 end)
 v485:AddToggle({
-    Name = "Auto Try Luck",
+    Name = "اوتو تجربة الحظ",
     Description = "",
     Default = false,
     Callback = function(v604)
@@ -4802,8 +4802,8 @@ spawn(function()
         end
     end)
 end)
-local _ = v485:AddSection({"Katakuri"})
-local v606 = v485:AddParagraph({Title = "Check Cake Prince", Content = "Loading..."})
+local _ = v485:AddSection({"كاتكوري"})
+local v606 = v485:AddParagraph({Title = "كشف على كيك برنس", Content = "تحميل..."})
 task.spawn(function()
     while task.wait(1) do
         pcall(function()
@@ -4823,7 +4823,7 @@ task.spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Farm Katakuri",
+    Name = "فارم كاتكوري",
     Description = "",
     Default = false,
     Callback = function(v608)
@@ -4927,7 +4927,7 @@ task.spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Farm Katakuri V2",
+    Name = "فارم كاتكوري V2",
     Description = "",
     Default = false,
     Callback = function(v619)
@@ -5041,7 +5041,7 @@ end)
 local _ = v485:AddSection({"Auto Farm Chest And Berry"})
 
 v485:AddToggle({
-    Name = "Auto Collect Berry",
+    Name = "اوتو تجميع berry",
     Description = "",
     Default = false,
     Callback = function(v628)
@@ -5089,7 +5089,7 @@ spawn(function()
     end
 end)
 v485:AddToggle({
-    Name = "Auto Farm Chest [ Tween ]",
+    Name = "اوتو تفريم صناديق [ طيران ]",
     Description = "",
     Default = false,
     Callback = function(v644)
@@ -5125,7 +5125,7 @@ end)
 local ChestBypass = false
 
 v485:AddToggle({
-    Title = "Auto Farm Chest [ Bypass ]",
+    Title = "اوتو تفريم صناديق  [ تنقل ]",
     Value = false,
     Callback = function(v)
         ChestBypass = v
@@ -5237,7 +5237,7 @@ else
     }
 end
 v485:AddDropdown({
-    Name = "Boss List",
+    Name = "بوس ليست",
     Description = "",
     Options = v658,
     Default = v658[1],
@@ -5246,7 +5246,7 @@ v485:AddDropdown({
     end
 })
 v485:AddToggle({
-    Name = "Auto Kill Boss Selected",
+    Name = "اوتو قتل بوسات مختارين",
     Description = "",
     Default = false,
     Callback = function(v660)
@@ -5282,7 +5282,7 @@ task.spawn(function()
         end
     end
 end)
-local _ = v485:AddSection({"Material"})
+local _ = v485:AddSection({"ماتريل"})
 local v664 = {}
 if not World1 then
     if World2 then
@@ -5370,7 +5370,7 @@ function getConfigMaterial(v665)
     end
 end
 v485:AddDropdown({
-    Name = "Material List",
+    Name = "ماتريل ليست",
     Description = "",
     Options = v664,
     Default = v664[1],
@@ -5379,7 +5379,7 @@ v485:AddDropdown({
     end
 })
 v485:AddToggle({
-    Name = "Auto Farm Material",
+    Name = "اوتو تفريم ماتريل",
     Description = "",
     Default = false,
     Callback = function(v667)
@@ -5421,7 +5421,7 @@ end)
 
 local _ = v486:AddSection({"Auto Fishing"})
 v486:AddToggle({
-    Title = "Auto Fishing",
+    Title = "اوتو صيد",
     Description = "",
     Default = false,
     Callback = function(v673)
@@ -5469,7 +5469,7 @@ task.spawn(function()
     end
 end)
 v486:AddDropdown({
-    Name = "Select Fishing Lure",
+    Name = "اختر طعم الصيد",
     Description = "",
     Options = {"Basic Bait", "Kelp Bait", "Good Bait", "Abyssal Bait", "Frozen Bait", "Epic Bait", "Carnivore Bait"},
     Default = "Basic Bait",
@@ -5479,7 +5479,7 @@ v486:AddDropdown({
     end
 })
 v486:AddDropdown({
-    Name = "Select Fishing Rod",
+    Name = "اختيار صنارة",
     Description = "",
     Options = {"Fishing Rod", "Gold Rod", "Shark Rod", "Shell Rod", "Treasure Rod"},
     Default = "Fishing Rod",
@@ -5488,9 +5488,9 @@ v486:AddDropdown({
     end
 })
 if World1 then
-    local _ = v487:AddSection({"Quest Sea 1"})
+    local _ = v487:AddSection({"مهمات عالم اول"})
     v487:AddToggle({
-        Name = "AutoSecondSea",
+        Name = "اوتو عللم ثاني",
         Description = "",
         Default = false,
         Callback = function(v693)
@@ -5548,7 +5548,7 @@ if World1 then
     end)
     local _ = v487:AddSection({"Boss Greybeard"})
     v487:AddToggle({
-        Name = "Kill Greybeard",
+        Name = "قتل Greybeard",
         Description = "",
         Default = false,
         Callback = function(v698)
@@ -5593,7 +5593,7 @@ if World1 then
     end)
     local _ = v487:AddSection({"Quest Sword"})
     v487:AddToggle({
-        Name = "Auto Get Saber",
+        Name = "اوتو اخذ سيف سيبر",
         Description = "",
         Default = false,
         Callback = function(v702)
@@ -5700,7 +5700,7 @@ if World1 then
         end
     end)
     v487:AddToggle({
-        Name = "Auto Get Sword Pole",
+        Name = "اوتو اخذ سيف Pole",
         Description = "",
         Default = false,
         Callback = function(v707)
@@ -5736,7 +5736,7 @@ if World1 then
         end
     end)
     v487:AddToggle({
-        Name = "Auto Get Sword Saw",
+        Name = "اوتو اخذ سيف Saw",
         Description = "",
         Default = false,
         Callback = function(v710)
@@ -5787,7 +5787,7 @@ if World1 then
             end
         end)
         v487:AddToggle({
-            Name = "Auto Get Sword Wardens",
+            Name = "اوتو اخذ سيف Wardens",
             Description = "",
             Default = false,
             Callback = function(v715)
@@ -5823,7 +5823,7 @@ if World1 then
             end
         end)
         v487:AddToggle({
-            Name = "Auto Get Sword Trident",
+            Name =" اوتو اخذ سيفTrident",
             Description = "",
             Default = false,
             Callback = function(v718)
@@ -5861,9 +5861,9 @@ if World1 then
     end
 end
 if World2 then
-    local _ = v487:AddSection({"Quest Sea 2"})
+    local _ = v487:AddSection({"مهمات عالم ثاني"})
     v487:AddToggle({
-        Name = "Auto Quest Sea Bartilo",
+        Name = "اوتو مهمة بحر Bartilo",
         Description = "",
         Default = false,
         Callback = function(v722)
@@ -6004,7 +6004,7 @@ if World2 then
         end)
     end)
     v487:AddToggle({
-        Name = "Auto Quest Sea 3",
+        Name = "اوتو مهمة عالم 3",
         Description = "",
         Default = false,
         Callback = function(v728)
@@ -6058,7 +6058,7 @@ if World2 then
 
     local _ = v487:AddSection({"Boss Dark Beard"})
     v487:AddToggle({
-        Name = "Auto Kill Dark Beard",
+        Name = "اوتو قتل  Dark Beard",
         Description = "",
         Default = false,
         Callback = function(v736)
@@ -6096,7 +6096,7 @@ if World2 then
         end
     end)
     v487:AddToggle({
-        Name = "Auto Kill Cursed Captain",
+        Name = "اوتو قتل Cursed Captain",
         Description = "",
         Default = false,
         Callback = function(v739)
@@ -6135,7 +6135,7 @@ if World2 then
     end)
     local _ = v487:AddSection({"Auto Buy Haki  "})
     v487:AddToggle({
-        Name = "Auto Buy Haki Colors",
+        Name = "شراء الوان هاكي صلب",
         Description = "",
         Default = false,
         Callback = function(v743)
@@ -6152,7 +6152,7 @@ if World2 then
         end
     end)
     v487:AddToggle({
-        Title = "Auto Buy Legendary Sword",
+        Title = "اوتو شراء سيوف ليجندري",
         Value = false,
         Callback = function(v745)
             _G.AutoBuyLegendarySword = v745
@@ -6174,7 +6174,7 @@ if World2 then
     end)
     local _ = v487:AddSection({"Quest Sword"})
     v487:AddToggle({
-        Name = "Auto Get Longsword",
+        Name = "اوتو اخذ سيف Longsword",
         Description = "",
         Default = false,
         Callback = function(v750)
@@ -6210,7 +6210,7 @@ if World2 then
         end
     end)
     v487:AddToggle({
-        Name = "Auto Get Sword Gravity Blade",
+        Name = "اوتو اخذ Gravity Blade",
         Description = "",
         Default = false,
         Callback = function(v753)
@@ -6248,7 +6248,7 @@ if World2 then
         end
     end)
     v487:AddToggle({
-        Name = "Auto Get Sword Flail",
+        Name = "اوتو اخذ سيف Flail",
         Description = "",
         Default = false,
         Callback = function(v756)
@@ -6284,7 +6284,7 @@ if World2 then
         end
     end)
     v487:AddToggle({
-        Name = "Auto Get Sword Rengoku",
+        Name = "اوتو اخذ سيف Rengoku",
         Description = "",
         Default = false,
         Callback = function(v759)
@@ -6326,7 +6326,7 @@ if World2 then
         end)
     end)
     v487:AddToggle({
-        Name = "Auto Get Sword Dragon Trident",
+        Name = "اوتو اخذ سيف Dragon Trident",
         Description = "",
         Default = false,
         Callback = function(v762)
@@ -6363,10 +6363,10 @@ if World2 then
     end)
 end
 if World3 then
-    local _ = v487:AddSection({"Quest Sea 3"})
+    local _ = v487:AddSection({"مهمات عالم 3"})
     local _ = v487:AddSection({"Boss Rip indra"})
     v487:AddToggle({
-        Name = "Auto kill Rip Indra",
+        Name = "اوتو قتل Rip Indra",
         Description = "",
         Default = false,
         Callback = function(v767)
@@ -6426,7 +6426,7 @@ if World3 then
             end)
         end)
         v487:AddToggle({
-            Name = "Auto Haki Colors",
+            Name = "اوتو هاكي الوان",
             Description = "",
             Default = false,
             Callback = function(v775)
@@ -6444,7 +6444,7 @@ if World3 then
         end)
         local _ = v487:AddSection({"Quest Skull Guitar"})
         v487:AddToggle({
-            Name = "Auto Skull Guitar",
+            Name = "اخذ سكول قتار",
             Description = "",
             Default = false,
             Callback = function(v778)
@@ -6541,7 +6541,7 @@ if World3 then
             end
         end)
         v487:AddToggle({
-            Name = "Kill Elite Hunter",
+            Name = "قتل Elite Hunter",
             Description = "",
             Default = false,
             Callback = function(v793)
@@ -6593,9 +6593,9 @@ if World3 then
                 end
             end
         end)
-        local _ = v487:AddSection({"Auto CDK"})
+        local _ = v487:AddSection({"اوتو CDK"})
         v487:AddToggle({
-            Name = "Auto Cdk [Beta]",
+            Name = "اوتو Cdk [بيتا]",
             Description = "",
             Default = false,
             Callback = function(v797)
@@ -6665,7 +6665,7 @@ if World3 then
             end
         end)
         v487:AddToggle({
-            Name = "Auto Get Yama",
+            Name = "اوتو اخذ ياما",
             Description = "",
             Default = false,
             Callback = function(v807)
@@ -6684,7 +6684,7 @@ if World3 then
             end
         end)
         v487:AddToggle({
-            Name = "Auto Holy Torch Tushita",
+            Name = "اوتو تشعيل تورش  Tushita",
             Description = "",
             Default = false,
             Callback = function(v808)
@@ -6730,7 +6730,7 @@ if World3 then
             end
         end)
         v487:AddToggle({
-            Name = "Auto Get Tushita",
+            Name = "اوتو اخذ توشيتا",
             Description = "",
             Default = false,
             Callback = function(v809)
@@ -6765,9 +6765,9 @@ if World3 then
                 end
             end
         end)
-        local _ = v487:AddSection({"Quest Sword"})
+        local _ = v487:AddSection({"مهمات سيوف"})
         v487:AddToggle({
-            Name = "Auto Get Sword Twin Hooks",
+            Name = "اوتو اخذ سيف Twin Hooks",
             Description = "",
             Default = false,
             Callback = function(v813)
@@ -6805,7 +6805,7 @@ if World3 then
             end
         end)
         v487:AddToggle({
-            Name = "Auto Get Sword Canvander",
+            Name = "اوتو اخذ سيف  Canvander",
             Description = "",
             Default = false,
             Callback = function(v816)
@@ -6841,7 +6841,7 @@ if World3 then
             end
         end)
         v487:AddToggle({
-            Name = "Auto Get Sword Buddy",
+            Name = "اوتو اخذ سيف Buddy",
             Description = "",
             Default = false,
             Callback = function(v819)
@@ -6879,38 +6879,38 @@ if World3 then
             end
         end)
     end
-local _ = v487:AddSection({"Teleport V4"})
+local _ = v487:AddSection({"تنقل v4"})
 v487:AddButton({
-    Title = "Teleport To Top GreatTree",
+    Title = "تمقل ل جزيرة شجارة عملقة",
     Value = false,
     Callback = function()
         Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3030.39453125, 2280.6171875, -7320.18359375)
     end
 })
 v487:AddButton({
-    Title = "Teleport Temple Of Time",
+    Title = "تنقل ل قلعة وقت",
     Value = false,
     Callback = function()
         Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
     end
 })
 v487:AddButton({
-    Title = "Teleport Lever Pull",
+    Title = "تنقل ل فتح باب v4",
     Value = false,
     Callback = function()
         topos(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
     end
 })
 v487:AddButton({
-    Title = "Teleport To The Clock",
+    Title = "تنقل ل ساعة",
     Value = false,
     Callback = function()
         topos(CFrame.new(29553.7812, 15066.6133, -88.2750015, 1, 0, 0, 0, 1, 0, 0, 0, 1))
     end
 })
-local _ = v487:AddSection({"Trial V4"})
+local _ = v487:AddSection({"تريل V4"})
 v487:AddButton({
-    Title = "Auto Race Door",
+    Title = "تنقل ل باب ريسك",
     Value = false,
     Callback = function()
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
@@ -6941,14 +6941,14 @@ v487:AddButton({
     end
 })
 v487:AddButton({
-    Title = "Buy Acient One Quest",
+    Title = "شراء مهمة كرة حمراء",
     Value = false,
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("UpgradeRace", "Buy")
     end
 })
 v487:AddToggle({
-    Name = "Auto Trial Human Ghost",
+    Name = "تجربة تلقائية شبح بشري",
     Description = "",
     Default = false,
     Callback = function(v998)
@@ -6957,7 +6957,7 @@ v487:AddToggle({
     end
 })
 v487:AddToggle({
-    Name = "Auto Trial All Race",
+    Name = "اوتو تريل كل ريسات",
     Description = "",
     Default = false,
     Callback = function(v999)
@@ -7085,7 +7085,7 @@ spawn(function()
     end)
 end)
 v487:AddToggle({
-    Name = "Auto Kill Player after Trial  V4",
+    Name = "اوتو قتل لاعبين بعد تريل  V4",
     Description = "",
     Default = false,
     Callback = function(v1020)
@@ -7118,7 +7118,7 @@ spawn(function()
 end)
 local _ = v487:AddSection({"Auto Skill"})
 v487:AddToggle({
-    Name = "Auto Skill Z",
+    Name = "اوتو سكيل Z",
     Description = "",
     Default = false,
     Callback = function(v1024)
@@ -7127,7 +7127,7 @@ v487:AddToggle({
     end
 })
 v487:AddToggle({
-    Name = "Auto Skill X",
+    Name = "اوتو سكيل  X",
     Description = "",
     Default = false,
     Callback = function(v1025)
@@ -7136,7 +7136,7 @@ v487:AddToggle({
     end
 })
 v487:AddToggle({
-    Name = "Auto Skill C",
+    Name = "اوتو سكيل  C",
     Description = "",
     Default = false,
     Callback = function(v1026)
@@ -7145,9 +7145,9 @@ v487:AddToggle({
     end
 })
 end
-local _ = v489:AddSection({"Sea Events"})
+local _ = v489:AddSection({"مهمات بحر"})
 v489:AddToggle({
-    Name = "Auto Drive Boats",
+    Name = "اوتو سواقة مركب",
     Description = "",
     Default = false,
     Callback = function(v948)
@@ -7206,7 +7206,7 @@ spawn(function()
     end)
 end)
 v489:AddToggle({
-    Name = "Auto Kill Terror Shank",
+    Name = "اوتو قتل Terror Shank",
     Description = "",
     Default = false,
     Callback = function(v952)
@@ -7321,7 +7321,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Kill Shark",
+    Name = "اوتو قتل Shark",
     Description = "",
     Default = false,
     Callback = function(v968)
@@ -7365,7 +7365,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Kill Piranha",
+    Name = "اوتو قتل Piranha",
     Description = "",
     Default = false,
     Callback = function(v973)
@@ -7409,7 +7409,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Kill Fish Crew Member",
+    Name = "اوتو قتل Fish Crew Member",
     Description = "",
     Default = false,
     Callback = function(v978)
@@ -7451,9 +7451,9 @@ spawn(function()
     end
 end)
 
-local _ = v489:AddSection({"Volcanic Island"})
+local _ = v489:AddSection({"جزيرة بركان"})
 v489:AddButton({
-    Title = "Tween Dragon Dojo",
+    Title = "طيران ل  Dragon Dojo",
     Value = false,
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance", Vector3.new(5661.53, 1013.09, -334.96))
@@ -7461,7 +7461,7 @@ v489:AddButton({
     end
 })
 v489:AddToggle({
-    Name = "Auto Dragon Huntery",
+    Name = "اوتو Dragon Huntery",
     Description = "",
     Default = false,
     Callback = function(v822)
@@ -7584,7 +7584,7 @@ spawn(function()
     end
 end)
 v489:AddButton({
-    Title = "Craft Volcanic Magnet",
+    Title = "صنع Volcanic Magnet",
     Value = false,
     Callback = function()
         local v849 = {[1] = "CraftItem", [2] = "Craft", [3] = "Volcanic Magnet"}
@@ -7604,7 +7604,7 @@ task.spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Find Prehistoric",
+    Name = "اوتو بحث Prehistoric",
     Description = "",
     Default = false,
     Callback = function(v851)
@@ -7716,7 +7716,7 @@ l_RunService_0.RenderStepped:Connect(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Tween Prehistoric Island",
+    Name = "تنقل ل جزيرة بركان",
     Description = "",
     Default = false,
     Callback = function(v882)
@@ -7745,7 +7745,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Defend Prehistoric",
+    Name = "اوتو دفاع Prehistoric",
     Description = "",
     Default = false,
     Callback = function(v887)
@@ -7849,9 +7849,9 @@ spawn(function()
         end
     end
 end)
-local _ = v489:AddSection({"Auto Skill"})
+local _ = v489:AddSection({"اوتو سكيل"})
 v489:AddToggle({
-    Name = "Auto Use Melee",
+    Name = "اوتو استعمال Melee",
     Description = "",
     Default = false,
     Callback = function(v918)
@@ -7860,7 +7860,7 @@ v489:AddToggle({
     end
 })
 v489:AddToggle({
-    Name = "Auto Use Sword",
+    Name = "اوتو استعمال Sword",
     Description = "",
     Default = false,
     Callback = function(v919)
@@ -7869,7 +7869,7 @@ v489:AddToggle({
     end
 })
 v489:AddToggle({
-    Name = "Auto Use Gun",
+    Name = "اوتو استعمال Gun",
     Description = "",
     Default = false,
     Callback = function(v920)
@@ -7879,7 +7879,7 @@ v489:AddToggle({
 })
 local _ = v489:AddSection({"Auto Kill Golem"})
 v489:AddToggle({
-    Name = "Auto Kill Golem",
+    Name = "اوتو قتل Golem",
     Description = "",
     Default = false,
     Callback = function(v922)
@@ -7917,7 +7917,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Kill Aura Golem",
+    Name = "اوتو قتل Aura Golem",
     Description = "",
     Default = false,
     Callback = function(v925)
@@ -7958,7 +7958,7 @@ spawn(function()
 end)
 local _ = v489:AddSection({"Auto Collect Bone,Egg"})
 v489:AddToggle({
-    Name = "Auto Collect Bone",
+    Name = "اوتو تجميع Bone",
     Description = "",
     Default = false,
     Callback = function(v934)
@@ -7978,7 +7978,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Collect Egg",
+    Name = "اوتو تجميع  Egg",
     Description = "",
     Default = false,
     Callback = function(v937)
@@ -7995,7 +7995,7 @@ spawn(function()
         end
     end
 end)
-local _ = v489:AddSection({"Kitsune Island"})
+local _ = v489:AddSection({"جزيرة كيتسون"})
 local v939 = v489:AddParagraph({Title = "Check Kitsune Island", Content = "Loading..."})
 task.spawn(function()
     while task.wait(1) do
@@ -8009,7 +8009,7 @@ task.spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Tween Kitsune island",
+    Name = "تنقل ل  Kitsune island",
     Description = "",
     Default = false,
     Callback = function(v940)
@@ -8046,7 +8046,7 @@ spawn(function()
     end)
 end)
 v489:AddToggle({
-    Title = "Esp Kitsune Island",
+    Title = "كشف Kitsune Island",
     Value = false,
     Callback = function(v945)
         KitsuneIslandEsp = v945
@@ -8063,7 +8063,7 @@ v489:AddToggle({
     end
 })
 v489:AddToggle({
-    Name = "Auto Azuer Ember",
+    Name = "اوتو Azuer Ember",
     Description = "",
     Default = false,
     Callback = function(v946)
@@ -8082,7 +8082,7 @@ spawn(function()
         end
     end
 end)
-local _ = v489:AddSection({"Mirage Island"})
+local _ = v489:AddSection({"جزيرة ميراج"})
 local v984 = v489:AddParagraph({Title = "Check Mirage Island", Content = "Loading..."})
 task.spawn(function()
     while task.wait(1) do
@@ -8096,7 +8096,7 @@ task.spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Tween Mirage Island",
+    Name = "تنقل ل Mirage Island",
     Description = "",
     Default = false,
     Callback = function(v985)
@@ -8118,7 +8118,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Title = "Esp Mirage Island",
+    Title = "كشف  Mirage Island",
     Description = "",
     Value = false,
     Callback = function(v988)
@@ -8136,7 +8136,7 @@ v489:AddToggle({
     end
 })
 v489:AddToggle({
-    Name = "Look Moon + Auto V3",
+    Name = "نظر الى قمر + اوتو V3",
     Description = "",
     Default = false,
     Callback = function(v989)
@@ -8161,7 +8161,7 @@ spawn(function()
     end
 end)
 v489:AddToggle({
-    Name = "Auto Tween To Gear",
+    Name = "تمقل ل ترس",
     Description = "",
     Default = false,
     Callback = function(v993)
@@ -8183,9 +8183,9 @@ spawn(function()
     end)
 end)
 
-local _ = v491:AddSection({"Fruits"})
+local _ = v491:AddSection({"فواكه"})
 v491:AddToggle({
-    Name = "Auto Random Fruits",
+    Name = "اوتو فكهة عشوائية",
     Description = "",
     Default = false,
     Callback = function(v1074)
@@ -8202,7 +8202,7 @@ spawn(function()
     end)
 end)
 v491:AddToggle({
-    Title = "Auto Store Fruits",
+    Title = "اوتو تخزين فواكه",
     Description = "",
     Value = false,
     Callback = function(v1075)
@@ -8272,7 +8272,7 @@ spawn(function()
     end
 end)
 v491:AddToggle({
-    Name = "Teleport To Fruit Spawn",
+    Name = "تنقل ل فواكه مرسبنة",
     Description = "",
     Default = false,
     Callback = function(v1084)
@@ -8291,7 +8291,7 @@ spawn(function()
     end
 end)
 v491:AddToggle({
-    Name = "Auto Teleport Fruits",
+    Name = "اوتو تنقل فواكه",
     Description = "",
     Default = false,
     Callback = function(v1087)
@@ -8309,7 +8309,7 @@ spawn(function()
         end
     end
 end)
-local _ = v491:AddSection({"Check Stock Fruits"})
+local _ = v491:AddSection({"ستوك فواكه"})
 local function v1096(v1091)
     local v1092 = tostring(v1091)
     repeat
@@ -10876,3 +10876,4 @@ v496:AddToggle({
 })
 
 return redzlib
+
